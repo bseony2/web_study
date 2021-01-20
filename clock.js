@@ -6,7 +6,8 @@ function getTime() {
     const minutes = date.getMinutes();
     const hours = date.getHours();
     const seconds = date.getSeconds();
-    clockTitle.innerText = `${hours}:${minutes}:${seconds<10?  `0${seconds}` : seconds}`;
+    clockTitle.innerText = `${hours}:${minutes}:${seconds<10?  `0${seconds}` : seconds}`; 
+                                //10초 아래일 경우 0이 하나 붙어서
 }
 
 function init() {
