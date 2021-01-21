@@ -19,7 +19,7 @@ body {
     }
     
     .showing {
-    display: block;
+        display: block;
     }
     
     @keyframes fadeIn {
