@@ -1,0 +1,17 @@
+{
+    "auto-close-tag.enableAutoCloseSelfClosingTag": false,
+    //"auto-close-tag.fullMode": true,
+    "auto-close-tag.enableAutoCloseTag": true,
+    "editor.autoClosingBrackets": "always",
+    "[json]": {
+
+
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    }
+}
