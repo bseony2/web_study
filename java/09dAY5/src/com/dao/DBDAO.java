@@ -1,4 +1,4 @@
-package com.dao;
+package testclass.dao;
 
 public interface DBDAO {
     

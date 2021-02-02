@@ -1,13 +1,13 @@
-package com.service;
+package testclass.service;
 
-import com.dao.DBDAO;
-import com.dao.MySQLDAO;
+import testclass.dao.DBDAO;
+
+import testclass.dao.*;
 
 public class DBService {
+    DBDAO dao;
 
-    DBDAO dao;//기본값 null
-    
-    public void setDAO(DBDAO dao){ //매개변수 interface 타입
+    public void setDAO(DBDAO dao){
         this.dao = dao;
         this.dao.connect();
     }
