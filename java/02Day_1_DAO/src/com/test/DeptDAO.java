@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DeptDAO { // DB연동 클래스 - select, insert, delete, update
 
@@ -112,5 +113,26 @@ public class DeptDAO { // DB연동 클래스 - select, insert, delete, update
                 //TODO: handle exception
             }
         }
+    }
+
+    public ArrayList<DeptDTO> getAllData(){
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        ArrayList<DeptDTO> dto = new ArrayList<DeptDTO>();
+
+        try {
+            Class.forName(driver);
+            con = DriverManager.getConnection(url, userid, passwd);
+            String sql = "select * from dept";
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while(rs.next()){
+                dto.add(new DeptDTO(rs.getInt("deptno"), rs.getString("dname"), rs.getString("loc")));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dto;
     }
 }
