@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃 스타일</title>
+    <style>
+        div {
+            width: 300px;
+            height: 50px;
+            background-color: crimson;
+            margin: 20px;
+        }
+        a {
+            margin: 20px; /*인라인은 가로 정렬이기에 가로 마진은 먹지만 세로 마진 X*/
+            border: solid red;
+        }
+        img {
+            width: 300px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>block elements는 가로로 정렬</h1>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <hr>
+
+    <h1>inline elements는 세로로 정렬</h1>
+    <a href="">인라인 엘리먼트</a>
+    <a href="">인라인 엘리먼트</a>
+    <a href="">인라인 엘리먼트</a>
+    <a href="">인라인 엘리먼트</a>
+
+    <hr>
+    <h1>이미지로 알아보기</h1>
+    <img src="./images/kpop-group-01.jpg" alt="">
+    <img src="./images/kpop-group-02.jpg" alt="">
+    <img src="./images/kpop-group-03.jpg" alt="">
+    <p>이미지 태그는 인라인 태그이지만 상하 길이 지정 가능</p>
+</body>
+</html>
