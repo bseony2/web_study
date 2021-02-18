@@ -6,7 +6,7 @@ public class Dept {
     String loc;
 
     public String toString(){
-        return "Dept [deptno=" + deptno + ", dname = " + dname + ", loc = " + loc;
+        return "Dept [deptno=" + deptno + ", dname = " + dname + ", loc = " + loc + "]";
     }
     public Dept(){
         super();
