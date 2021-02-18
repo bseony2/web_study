@@ -7,7 +7,6 @@ import com.dao.OracleMyBatisDAO;
 import com.dto.Dept;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 public class OracleMyBatisService {
 
@@ -31,18 +30,14 @@ public class OracleMyBatisService {
 		return list;
 	}
 
-	public int insert(Dept dept){
-        System.out.println("위쪽");
+    public void insert(Dept dept){
         SqlSession session = MySqlSessionFactory.getSqlSession();
-        System.out.println("아래쪽");
-        int num = 0;
         try{
-            num = dao.insert(session, dept);
+            dao.insert(session, dept);
             session.commit(); //DML 사용시 명시적으로 꼭 명령해주어야 함
         }finally{
             session.close();
         }
-        return num;
     }
 
     public Dept selectByDeptno(int deptno){
@@ -56,6 +51,14 @@ public class OracleMyBatisService {
         return dept;
     }
 
-    
+    public void delete(int deptno){
+        SqlSession session = MySqlSessionFactory.getSqlSession();
+        try{
+            dao.delete(session, deptno);
+            session.commit();
+        }finally{
+            session.close();
+        }
+    }
     
 }

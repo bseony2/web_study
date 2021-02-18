@@ -20,8 +20,16 @@
         (#{deptno}, #{dname}, #{loc})
     </insert>
 
-    <select id="selectByDeptno" resultType="com.dto.Dept">
-        select deptno, dname, loc from dept where deptno = #{deptno}
+    <select id="selectByDeptno" parameterType="int" resultType="com.dto.Dept">
+        select deptno, dname, loc from dept where deptno= #{deptno}
     </select>
+
+    <update id='deptUpdate' parameterType="com.dto.Dept">
+        update dept set dname=#{dname}, loc= #{loc} where deptno= #{deptno}
+    </update>
+
+    <delete id="deptDelete" parameterType="int">
+        delete from dept where deptno=#{deptno}
+    </delete>
 
 </mapper>

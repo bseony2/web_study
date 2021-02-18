@@ -8,11 +8,6 @@
         <environment id = "development">
             <transactionManager type ="JDBC"/>
             <dataSource type = "POOLED">
-                <!-- <property name="driver" value="${oracle.jdbc}"/>
-                <property name="url" value="${oracle.url}"/>
-                <property name="username" value="${oracle.userid}"/>
-                <property name="password" value="${oracle.passwd}"/> -->
-
                 <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
                 <property name="url" value="jdbc:oracle:thin:@Localhost:1521:xe"/>
                 <property name="username" value="scott"/>

@@ -14,10 +14,9 @@ public class OracleMyBatisDAO {
 		return list;
 	}
 
-	public int insert(SqlSession session, Dept dept) {
+	public void insert(SqlSession session, Dept dept) {
         int num = session.insert("deptInsert", dept);//(id, 데이터)
         System.out.println("추가된 레코드 ===" + num);
-		return num;
 	}
 
 	public Dept selectByDeptno(SqlSession session, int deptno) {
@@ -25,5 +24,15 @@ public class OracleMyBatisDAO {
 		return dept;
 	}
 
+	public int update(SqlSession session, Dept dept){
+		int num = session.update("deptUpdate", dept);
+		System.out.println("업데이트 갯수=====" + num);
+		return num;
+	}
+
+	public void delete(SqlSession session, int deptno){
+		int num = session.delete("deptDelete", deptno);
+		System.out.println("삭제된 갯수==========" + num);
+	}
     
 }
