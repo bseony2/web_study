@@ -1,0 +1,5 @@
+themoviedb.org
+ddfb2f737e314580d6c0b795e0483ec3
+
+API_URL
+https://api.themoviedb.org/3/
