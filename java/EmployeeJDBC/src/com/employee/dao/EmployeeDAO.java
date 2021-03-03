@@ -66,45 +66,45 @@ public class EmployeeDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try{
-		  String sql = "select empno,ename,dname,loc,sal,"
-		  		+ "  to_char(hiredate,'YYYY-MM-DD') hiredate,state from employee ";
-		  
-		  if("1".equals(inputSubMenu)){
-			  sql += " where empno = "+searchWord;
-		  }
-		  if("2".equals(inputSubMenu)){
-			  sql += " where ename = '"+searchWord+"'";
-		  }
-		  if("3".equals(inputSubMenu)){
-			  sql += " where dname = '"+searchWord+"'";
-		  }
-		  if("4".equals(inputSubMenu)){
-			  sql += " where loc = '"+searchWord+"'";
-		  }
-		  if("5".equals(inputSubMenu)){
-			  sql += " where sal = "+searchWord;
-		  }
-		  pstmt = con.prepareStatement(sql);
+			String sql = "select empno,ename,dname,loc,sal,"
+					+ "  to_char(hiredate,'YYYY-MM-DD') hiredate,state from employee ";
+			
+			if("1".equals(inputSubMenu)){
+				sql += " where empno = "+searchWord;
+			}
+			if("2".equals(inputSubMenu)){
+				sql += " where ename = '"+searchWord+"'";
+			}
+			if("3".equals(inputSubMenu)){
+				sql += " where dname = '"+searchWord+"'";
+			}
+			if("4".equals(inputSubMenu)){
+				sql += " where loc = '"+searchWord+"'";
+			}
+			if("5".equals(inputSubMenu)){
+				sql += " where sal = "+searchWord;
+			}
+			pstmt = con.prepareStatement(sql);
 
-		  rs = pstmt.executeQuery();
-		  while(rs.next()){
-			  int empno = rs.getInt("empno");
-			  String ename = rs.getString("ename");
-			  String dname = rs.getString("dname");
-			  String loc = rs.getString("loc");
-			  int sal = rs.getInt("sal");
-			  String hiredate = rs.getString("hiredate");
-			  System.out.println("hiredate > " + hiredate );
-			  String state = rs.getString("state");
-			  Employee emp = null;
-			  if("영업".equals(dname)){
-				  emp = new Sales(empno, ename, hiredate, loc, sal, state, sal*Sales.COMMISSION_RATE);
-			  }else{
-				  emp = new Engineer(empno, ename, hiredate, loc, sal, state);
-			  }
-			  list.add(emp);
-		  }//end if
-		  if(list.size()==0){
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				int empno = rs.getInt("empno");
+				String ename = rs.getString("ename");
+				String dname = rs.getString("dname");
+				String loc = rs.getString("loc");
+				int sal = rs.getInt("sal");
+				String hiredate = rs.getString("hiredate");
+				System.out.println("hiredate > " + hiredate );
+				String state = rs.getString("state");
+				Employee emp = null;
+				if("영업".equals(dname)){
+					emp = new Sales(empno, ename, hiredate, loc, sal, state, sal*Sales.COMMISSION_RATE);
+				}else{
+					emp = new Engineer(empno, ename, hiredate, loc, sal, state);
+				}
+				list.add(emp);
+			}//end if
+			if(list.size()==0){
 				throw new DataNotFoundException("에러발생:일치하는 사원이 없습니다.");
 		  }
 		}catch(SQLException e){

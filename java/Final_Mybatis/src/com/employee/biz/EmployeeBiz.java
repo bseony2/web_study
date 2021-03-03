@@ -61,7 +61,7 @@ public class EmployeeBiz implements IEmployeeBiz {
 			xxx.put("inputSubMenu", inputSubMenu.trim());
 			xxx.put("searchWord", searchWord.trim());
 			System.out.println(inputSubMenu + "\t" + searchWord);
-			List<HashMap<String, Object>> selectList = session.selectList("employee.searchList", xxx);
+			List<HashMap<String, Object>> selectList = sessigon.selectList("employee.searchList", xxx);
 			System.out.println(">>>>" + selectList.size());
 			for (HashMap<String, Object> m : selectList) {
 				int empno = ((BigDecimal) m.get("EMPNO")).intValue();

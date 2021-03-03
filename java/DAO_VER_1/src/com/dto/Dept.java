@@ -1,9 +1,9 @@
 package com.dto;
 
 public class Dept {
-    int deptno;
-    String dname;
-    String loc;
+    private int deptno;
+    private String dname;
+    private String loc;
 
     public String toString(){
         return "Dept [deptno = "+deptno+"dname = "+dname+"loc = "+loc+"]";
