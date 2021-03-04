@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q_3</title>
+</head>
+<body>
+    <span style="color: blue; font-weight: bold;">기본지원사항</span>
+    <form action="" method="POST">
+        <table border="1">
+            <tr>
+                <th><strong>응시분야</strong></th>
+                <td>
+                    <select name="jobs">
+                        <option value="consulting">consulting</option>
+                        <option value="cc">cc</option>
+                    </select>
+                    <select name="job">
+                        <option value="staff">staff</option>
+                        <option value="bb">bb</option>
+                    </select>
+                </td>            
+            </tr>
+            <tr>
+                <th>졸업여부</th>
+                <td>
+                    <input type="radio" name="school" checked="checked" value="졸업" /> 졸업
+                    <input type="radio" name="school" value="졸업예정" /> 졸업예정
+                </td>
+            </tr>
+        </table>
+        <span style="color: blue; font-weight: bold;">기본인적사항</span>
+        <table border="2">
+            <tr>
+                <th>성명</th>
+                <td>
+                    <textarea name="name" rows="1" cols="10"></textarea>
+                </td>
+                <td>국적
+                <textarea name="nation" rows="1" cols="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>영문이름</th>
+            <td>
+                성
+                <textarea name="familyName" rows="1" cols="10"></textarea>
+            </td>
+            <td>
+                이름
+                <textarea name="firstName" rows="1" cols="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td colspan="2">
+                <textarea name="eMailId" rows="1" cols="10"></textarea>
+                @
+                <textarea name="eMailServer" rows="1" cols="16"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>휴대전화</th>
+            <td colspan="2">
+                <textarea name="message" rows="1" cols="5"></textarea>
+                -
+                <textarea name="message" rows="1" cols="5"></textarea>
+                -
+                <textarea name="message" rows="1" cols="5"></textarea>
+    
+            </td>
+        </tr>
+        </table>
+        <input type="submit" value="전송">
+        <input type="reset" value="취소">
+
+    </form>
+    
+</body>
+</html>
