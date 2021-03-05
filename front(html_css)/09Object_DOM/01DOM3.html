@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+아이디<input type="text" id="xxx" name="userid" value="zzz" ><br>
+비밀번호<input type="password" id="yyy"  name="passwd" value="xx"><br>
+<button onClick="login()">로그인</button>
+<script type="text/javascript">
+
+    function login(){
+    	
+    	// body로 직접 접근 가능
+       var body = document.body;
+       console.log(body);
+       
+       //input 태그명을 접근 
+       var inputs= document.getElementsByTagName("input");
+       console.log(inputs);
+       var id = inputs[0];
+       console.log(id.value);
+       var pw = inputs[1];
+       console.log(pw.value);
+       
+       // 태그의 name 속성명 이용
+       
+       var xx =document.getElementsByName("userid");
+       console.log("xx>>",xx);
+       
+       //id 속성으로 접근
+       var id2 = document.getElementById("xxx");
+       var pw2 = document.getElementById("yyy");
+       console.log(id2.value, pw2.value);
+       console.log(document.getElementById("xxx").value);
+    }
+   
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
