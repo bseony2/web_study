@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	
+	//변수 선언
+	var name = "홍길동";
+	var name2 = new String("홍길동");
+	var age = 20;
+	var array = [1,2];
+	var object2 = {};
+	var a = false;
+	var b = null;
+	var c;
+	var k = function(){};
+	/* const T= 123;
+	T= 124; */
+	
+
+
+	console.log( name instanceof String);  //false
+	console.log( name2 instanceof String);  //true
+	console.log( age instanceof Number);   //false
+	console.log( array instanceof Array);   //true
+	console.log( object2 instanceof Object); //true
+	console.log( a instanceof Boolean);    //false
+	console.log( b instanceof Object);     //false
+	console.log( k instanceof Function);    //true
+
+	// ECMAScript 5 introduced Array.isArray()
+	var items = [];
+	console.log(Array.isArray(items));
+	
+	//////////////////////////////////////////////////////////
+	var xxx = new String("Hello"); //Object
+	xxx.userid = "xx";
+	console.log(xxx.userid);  // xx
+	
+	var xxx2 = "Hello";  //string
+	xxx2.userid="yy";
+	console.log(xxx2.userid); // undefined
+   //////////////////////////////////////////////////////////
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

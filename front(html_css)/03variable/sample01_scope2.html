@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>variable scope</title>
+<script type="text/javascript">
+
+     var a = 10;  // 전역변수
+     function xxx(){
+    	 var b = 20; // 로컬변수
+    	 c = 20;    // window 객체의 속성으로 추가된다. 권장안함.
+    	 /*
+    	 var 를 지정하지 않으면 전역scope(전역객체:window)에 동적으로 변수가 정의된다.
+         ( 즉, var가 없으면 변수가 정의되는 것은 파싱 단계가 아니고 런타임에 동적 정의됨)
+    	 */
+     }
+     xxx();
+     console.log(c);
+     console.log(a);
+     console.log(b);
+</script>
+</head>
+
+
+
+
+<body>
+
+</body>
+</html>
