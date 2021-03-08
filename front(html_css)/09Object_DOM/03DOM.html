@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+    
+        var arr=["a.jpg", "b.jpg", "c.jpg"];
+        var i = 0;
+
+        function before(){
+            var img=document.getElementById("flag");
+            --i;
+            if(i<0){
+                i=2;
+            }
+            img.src="./images/"+arr[i];
+        }
+
+        function next(){
+            var img=document.getElementById("flag");
+            ++i;
+            if(i>=3){
+                i=0;
+            }
+            img.src="./images/"+arr[i];
+        }
+
+    </script>
+</head>
+<body>
+    <img src="./images/a.jpg" width="200" height="200" id="flag" alt="flowers">
+    <button onclick="before()">전</button>
+    <button onclick="next()">후</button>
+</body>
+</html>
