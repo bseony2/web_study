@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function sum(arr){
+            var sum = 0;
+            for(var i in arr){
+                if(i%2==0){
+                    sum = sum + parseInt(i);
+                }
+            }
+            return sum
+        }
+        var arr = [1, 2, 3, 4, 5];
+        var m = sum(arr);
+        console.log("짝수 합계:", m)
+    </script>
+</body>
+</html>
